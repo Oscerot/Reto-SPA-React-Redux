@@ -5,3 +5,5 @@ Para ejecutar el proyecto sólo hay que descargarlo e instalar las siguientes de
 -npm install redux
 -npm install react-redux
 -npm istall --save bootstrap
+
+Para ejecutarlo debemos situarnos en la carpeta raíz del proyecto y ejecutar el comando "npm start"
