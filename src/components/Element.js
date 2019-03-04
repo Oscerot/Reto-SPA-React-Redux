@@ -1,14 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from 'react-redux';
+import { deleteElement } from '../actions/elementActions';
+import { selectElement } from '../actions/elementActions';
 
-class Element extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="element">
-        <p>{this.props.name} <a><span className="glyphicon glyphicon-trash" /></a></p>
-      </div>
-    );
-  }
+//Representa cada elemento que aparece en color gris en la lista
+const Element = ({ id, name, dispatch }) => {
+  return (
+    <div className="element">
+      <p onClick={() => //Si da clic en el nombre, se abre la ventana de editar
+        dispatch(selectElement(id))}>{name}</p>
+      <a onClick={() => //Si da clic en el botón de basura, se elimina el elemento
+        dispatch(deleteElement(id))
+      }><span className="glyphicon glyphicon-trash" /></a>
+    </div >
+  );
 }
 
-export default Element;
+export default connect()(Element);

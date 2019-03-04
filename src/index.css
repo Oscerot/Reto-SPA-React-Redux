@@ -24,6 +24,7 @@ code {
 
 .element p {
   margin: 0%;
+  display: inline;
 }
 
 .element a {
