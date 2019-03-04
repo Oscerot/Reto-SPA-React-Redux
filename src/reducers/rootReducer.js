@@ -1,9 +1,9 @@
 
 const initState = {
     elements: {
-        '1': { body: "lol 1" },
-        '2': { body: "lol 2" },
-        '3': { body: "lol 3" }
+        '1': { name: "nombre 1", description: "lol 1" },
+        '2': { name: "nombre 2", description: "lol 2" },
+        '3': { name: "nombre 3", description: "lol 3" }
     },
     elementSelected: null,
     statusInfo: 0,
@@ -26,6 +26,14 @@ const rootReducer = (state = initState, action) => { //lista de elementos vacía
         return {
             ...state,
             statusInfo: 1
+        };
+    }
+    else if (action.type === "ADD_ELEMENT") {
+        let tempState = state.elements;
+        tempState[action.id] = { name: action.name, description: action.description };
+        return {
+            ...state,
+            elements: tempState
         };
     }
     return state;

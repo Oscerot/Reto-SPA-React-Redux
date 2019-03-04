@@ -1,4 +1,4 @@
-let elementID = 0
+let elementID = 5
 export const addElement = (name, description) => ({
     type: 'ADD_ELEMENT',
     id: elementID++, //Inicializamos elementID en 0 para que al agregar el primero, se agregue con ID = 1 

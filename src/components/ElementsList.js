@@ -13,7 +13,7 @@ class ElementsList extends Component {
         return (
             <div className="section">{
                 Object.keys(elements).map(function (key) {
-                    return <Element key={Number(key)} name={elements[key].body} />
+                    return <Element key={Number(key)} name={elements[key].name} />
                 })
             }
                 <div className="element">
